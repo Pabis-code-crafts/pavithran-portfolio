@@ -1,0 +1,8 @@
+services:
+  portfolio:
+    build:
+      context: .
+    container_name: developer-portfolio
+    ports:
+      - "${PORTFOLIO_HOST_BIND:-127.0.0.1}:${PORTFOLIO_PORT:-3001}:80"
+    restart: unless-stopped
