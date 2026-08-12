@@ -62,6 +62,6 @@ export const featuredProject: Project = {
     "Active development",
     "Moving toward full launch",
   ],
-  liveUrl: "#",
+  liveUrl: "https://schedowai.duckdns.org",
   sourceUrl: "#",
 };

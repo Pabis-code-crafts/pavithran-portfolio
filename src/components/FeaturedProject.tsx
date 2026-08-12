@@ -43,7 +43,7 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
       </div>
 
       <div className="project-actions">
-        <a className="button primary" href={project.liveUrl}>
+        <a className="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">
           Live Demo
         </a>
       </div>
