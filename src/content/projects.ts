@@ -12,6 +12,8 @@ export type Project = {
   builtWith: string[];
   status: string[];
   liveUrl: string;
+  walkthroughUrl: string;
+  walkthroughThumbnailUrl: string;
   sourceUrl: string;
 };
 
@@ -63,5 +65,7 @@ export const featuredProject: Project = {
     "Moving toward full launch",
   ],
   liveUrl: "https://schedowai.duckdns.org",
+  walkthroughUrl: "https://youtu.be/_sgEuQrRHO8",
+  walkthroughThumbnailUrl: "https://img.youtube.com/vi/_sgEuQrRHO8/hqdefault.jpg",
   sourceUrl: "#",
 };

@@ -14,6 +14,38 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
         <p className="project-lede">{project.description}</p>
       </div>
 
+      <section className="project-demo" aria-labelledby="schedow-demo-heading">
+        <div className="project-demo-copy">
+          <p className="eyebrow">Experience Schedow</p>
+          <h4 id="schedow-demo-heading">Experience Schedow yourself</h4>
+          <p>Get the full experience with the live Supervisor demo.</p>
+          <a
+            className="button primary project-demo-button"
+            href={project.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open the Schedow live demo in a new tab"
+          >
+            🚀 Live Demo
+          </a>
+          <span>Try the full Supervisor experience - no installation required.</span>
+        </div>
+
+        <a
+          className="walkthrough-preview"
+          href={project.walkthroughUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Watch the Schedow walkthrough on YouTube in a new tab"
+        >
+          <span className="walkthrough-media">
+            <img src={project.walkthroughThumbnailUrl} alt="How to Use Schedow YouTube walkthrough thumbnail" />
+            <span className="walkthrough-play" aria-hidden="true">Play</span>
+          </span>
+          <span className="walkthrough-label">Watch: How to Use Schedow</span>
+        </a>
+      </section>
+
       <div className="project-story-grid">
         {project.sections.map((section) => (
           <section className="project-story-block" key={section.heading}>
@@ -40,12 +72,6 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
             ))}
           </div>
         </div>
-      </div>
-
-      <div className="project-actions">
-        <a className="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">
-          Live Demo
-        </a>
       </div>
     </article>
   );
