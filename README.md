@@ -43,18 +43,19 @@ This repository deploys to GitHub Pages with the workflow in `.github/workflows/
 The workflow:
 
 - installs dependencies with pnpm
-- runs the existing production build
+- runs the GitHub Pages production build
+- writes the custom domain `CNAME` file into `dist/`
 - uploads the generated `dist/` directory
 - deploys the static site to GitHub Pages
 
-For GitHub Pages, Vite uses the repository base path `/pavithran-portfolio/`. Local development keeps the root base path `/`.
+GitHub Pages should be configured to deploy from GitHub Actions so the live site serves the built `dist/` artifact, not the repository source files.
 
 ## GitHub Pages URL
 
 Expected URL after Pages is enabled for the repository:
 
 ```text
-https://pabis-code-crafts.github.io/pavithran-portfolio/
+https://pavithran.duckdns.org/
 ```
 
 ## Docker

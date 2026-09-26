@@ -36,6 +36,9 @@ jobs:
       - name: Build
         run: pnpm build:pages
 
+      - name: Configure custom domain
+        run: echo "pavithran.duckdns.org" > dist/CNAME
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
