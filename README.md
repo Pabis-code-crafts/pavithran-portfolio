@@ -1,18 +1,10 @@
 # Developer Portfolio
 
-A simple personal software engineering portfolio built as a standalone Vite, React, and TypeScript application.
+Personal software engineering portfolio for Pavithran Gurusamy, built as a static Vite, React, and TypeScript application.
 
-This project is intentionally independent from Schedow. It does not modify or depend on Schedow's Docker Compose, Caddyfile, services, networks, or deployment configuration.
+This project is independent from Schedow. It does not modify or depend on Schedow's Docker Compose, Caddyfile, services, networks, or deployment configuration.
 
-## Sections
-
-- Home
-- Timeline
-- Projects
-- About
-- Contact
-
-## Local Development
+## Local development
 
 Install dependencies:
 
@@ -26,67 +18,50 @@ Run the local dev server:
 pnpm dev
 ```
 
-Open:
+Local URL:
 
 ```text
 http://localhost:5174
 ```
 
-## Production Build
+## Production build
 
 ```bash
 pnpm build
 ```
 
-Preview the production build:
+Preview the production build locally:
 
 ```bash
 pnpm preview
 ```
 
+## GitHub Pages deployment
+
+This repository deploys to GitHub Pages with the workflow in `.github/workflows/deploy-pages.yml`.
+
+The workflow:
+
+- installs dependencies with pnpm
+- runs the existing production build
+- uploads the generated `dist/` directory
+- deploys the static site to GitHub Pages
+
+For GitHub Pages, Vite uses the repository base path `/pavithran-portfolio/`. Local development keeps the root base path `/`.
+
+## GitHub Pages URL
+
+Expected URL after Pages is enabled for the repository:
+
+```text
+https://pabis-code-crafts.github.io/pavithran-portfolio/
+```
+
 ## Docker
 
-Build the image:
+Docker support is still available for local container testing or future non-GitHub-Pages hosting:
 
 ```bash
 docker build -t developer-portfolio .
-```
-
-Run the container locally:
-
-```bash
 docker run --rm -p 3001:80 developer-portfolio
 ```
-
-Or use Docker Compose:
-
-```bash
-docker compose up --build
-```
-
-Open:
-
-```text
-http://localhost:3001
-```
-
-## Content To Fill In
-
-Update the editable content files:
-
-- `src/content/profile.ts`
-- `src/content/timeline.ts`
-- `src/content/projects.ts`
-
-Use real dates, links, screenshots, and personal details once they are available.
-
-## Later EC2 / Caddy Deployment
-
-Later, the portfolio can run as a separate container on the same EC2 instance as Schedow. Caddy should remain the only public entry point and route the portfolio domain to the portfolio container.
-
-Do this later, not in the first scaffold:
-
-- choose the production portfolio domain
-- create or attach a shared Docker network for Caddy and the portfolio container
-- add a new Caddy site block for the portfolio domain
-- keep Schedow's existing domain and service routing unchanged
